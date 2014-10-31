@@ -69,7 +69,7 @@ typedef enum {
     BOOL _isConnecting;
     BOOL _useSecure;
     
-    NSArray *_cookies;
+    __weak NSArray *_cookies;
     
     NSURLConnection *_handshake;
     
@@ -95,7 +95,7 @@ typedef enum {
 @property (nonatomic, readonly) NSString *sid;
 @property (nonatomic, readonly) NSTimeInterval heartbeatTimeout;
 @property (nonatomic) BOOL useSecure;
-@property (nonatomic) NSArray *cookies;
+@property (nonatomic, weak) NSArray *cookies;
 @property (nonatomic, readonly) BOOL isConnected, isConnecting;
 @property (nonatomic, weak) id<SocketIODelegate> delegate;
 @property (nonatomic) BOOL returnAllDataFromAck;
